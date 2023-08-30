@@ -33,8 +33,17 @@ public class AlunoServico {
             return new ResponseEntity<RespostaModelo>(respostaModelo, HttpStatus.BAD_REQUEST);
         }else if(alunoModelo.getNota2() == null){
             respostaModelo.setMensagem("A segunda nota é obrigatória!");
-            return new ResponseEntity<RespostaModelo>(respostaModelo, HttpStatus.BAD_REQUEST);            
+            return new ResponseEntity<RespostaModelo>(respostaModelo, HttpStatus.BAD_REQUEST);
+        }else if(alunoModelo.getNota1().doubleValue() > 100 || alunoModelo.getNota2().doubleValue() > 100){
+            respostaModelo.setMensagem("A nota não pode passar de 100!");
+            return new ResponseEntity<RespostaModelo>(respostaModelo, HttpStatus.BAD_REQUEST);
         }else{
+            alunoModelo.setMedia((alunoModelo.getNota1().doubleValue() + alunoModelo.getNota2().doubleValue()) /2);
+            if(alunoModelo.getMedia() > 70){
+                alunoModelo.setSituacao("APROVADO");
+            }else{
+                alunoModelo.setSituacao("REPROVADO");
+            }
             if(acao.equals("cadastrar")){
                 return new ResponseEntity<AlunoModelo>(alunoRepositorio.save(alunoModelo), HttpStatus.CREATED);
             }else{

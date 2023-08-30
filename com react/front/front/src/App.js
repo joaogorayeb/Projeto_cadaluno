@@ -10,7 +10,9 @@ function App() {
     codigo : 0,
     nome : '',
     nota1 : '',
-    nota2 : ''
+    nota2 : '',
+    media : '',
+    situacao : ''
   }
 
   // UseState
