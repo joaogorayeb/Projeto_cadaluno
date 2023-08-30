@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.conteudo{
+    margin: 10vh auto;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+nav .container{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+.links{
+    font-weight: 600;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+.links li{
+    list-style: none;
+    display: inline;
+    padding: 0 20px;
+}
+nav a{
+    text-decoration: none;
+    color: #000;
+}
