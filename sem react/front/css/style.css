@@ -3,9 +3,6 @@
     padding: 0;
     font-family: sans-serif;
 }
-.conteudo{
-    margin: 10vh auto;
-}
 nav{
     display: flex;
     justify-content: center;
@@ -37,3 +34,14 @@ nav a{
     text-decoration: none;
     color: #000;
 }
+form{
+    width: 500px;
+    margin: 30px auto;
+    text-align: center;
+  }
+  form input{
+    margin-bottom: 5px;
+  }
+  form input[type='button']{
+    margin-right: 10px;
+  }
